@@ -11,7 +11,7 @@ Present a flag challenge to any given player in gradual progression of difficult
 
 # Getting Starting 
 
-- git clon
+- git clone  git@github.com:mschmulen/CountryTrainingKit.git
 - open `DemoApp`
 - run `DemoApp`
 - experiment with updating the CoreML `CountryFlagGameRegressor.mlmodel` via play events from the game
