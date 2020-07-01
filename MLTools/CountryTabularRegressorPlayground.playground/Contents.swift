@@ -1,7 +1,7 @@
 import Cocoa
 import CreateML
 
-let trainingFile = URL(fileURLWithPath: "/Users/schmulen/trees/github/jumptack/mini-games/LocalFrameworks/CountryTrainingKit/MLdata/flagData_v5.csv")
+let trainingFile = URL(fileURLWithPath: "/Users/schmulen/trees/github/mschmulen/CountryTrainingKit/MLdata/flagData_v5.csv")
 var dataTable = try! MLDataTable(contentsOf: trainingFile)
 
 func exportModel(regressor: MLRegressor, fileName: String = "CountryFlagGameRegressor.mlmodel") {
@@ -10,7 +10,7 @@ func exportModel(regressor: MLRegressor, fileName: String = "CountryFlagGameRegr
     let modelMetadata = MLModelMetadata(author: "Matt Schmulen",
                                         shortDescription: "Predicts the number of guesses to get the flag for a country.",
                                         version: "1.0")
-    let mlModelsFolder = URL(fileURLWithPath:"/Users/schmulen/trees/github/jumptack/mini-games/LocalFrameworks/CountryTrainingKit/CoreMLModels")
+    let mlModelsFolder = URL(fileURLWithPath:"/Users/schmulen/trees/github/mschmulen/LocalFrameworks/CountryTrainingKit/CoreMLModels")
     try! regressor.write(
         to: mlModelsFolder.appendingPathComponent(fileName),
         metadata: modelMetadata
